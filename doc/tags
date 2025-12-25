@@ -1,0 +1,11 @@
+exo	exo.txt	/*exo*
+exo.bufnr	exo.txt	/*exo.bufnr*
+exo.finished_at	exo.txt	/*exo.finished_at*
+exo.job	exo.txt	/*exo.job*
+exo.kill()	exo.txt	/*exo.kill()*
+exo.open()	exo.txt	/*exo.open()*
+exo.prompt()	exo.txt	/*exo.prompt()*
+exo.run()	exo.txt	/*exo.run()*
+exo.started_at	exo.txt	/*exo.started_at*
+exo.time_format	exo.txt	/*exo.time_format*
+exo.w_threshold	exo.txt	/*exo.w_threshold*

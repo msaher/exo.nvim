@@ -1,0 +1,83 @@
+*exo* run commands in a throwaway buffer
+
+Run external commands and show the output in a throwaway buffer
+Inspired by https://github.com/habamax/vim-shout
+By design, it does not do syntax highligting or parse error output. You can
+use :cgetbuffer to send the buffer's content to the quickfix list. However,
+it'll use https://github.com/msaher/bufix.nvim if its available
+
+It internally uses vim.system(), which does NOT use a tty. If you want a
+tty, use |:terminal|. There are advantages to not using :terminal.
+1. The buffer is modifable. You can delete or mark on comment on output.
+Think running commands like `:g/re/d`
+2. Since there are no escape sequences, you can save the buffer as a file
+3. exo buffers have a filetype. Meaning you can use custom bindings, syntax rules, etc.
+
+------------------------------------------------------------------------------
+                                                               *exo.w_threshold*
+                               `exo.w_threshold`
+The width threshold before
+The number of columns to decide when to split vertically
+Type ~
+`(number)`
+
+------------------------------------------------------------------------------
+                                                                       *exo.job*
+                                   `exo.job`
+The underlying job in the exo buffer
+Type ~
+`(vim.SystemObj?)`
+
+------------------------------------------------------------------------------
+                                                                     *exo.bufnr*
+                                  `exo.bufnr`
+The exo buffer number. Its -1 when there's no buffer
+Type ~
+`(number)`
+
+------------------------------------------------------------------------------
+                                                               *exo.time_format*
+                               `exo.time_format`
+Time format used in the exo buffer.
+Type ~
+`(string)`
+
+------------------------------------------------------------------------------
+                                                                *exo.started_at*
+                                `exo.started_at`
+When the job started in seconds
+Type ~
+`(number)`
+
+------------------------------------------------------------------------------
+                                                               *exo.finished_at*
+                               `exo.finished_at`
+When the job finished in seconds
+Type ~
+`(number)`
+
+------------------------------------------------------------------------------
+                                                                    *exo.kill()*
+                                  `exo.kill`()
+Sends SIGTERM to the job. If it does not terminate after a timeout. It
+sends SIGKILL
+
+------------------------------------------------------------------------------
+                                                                     *exo.run()*
+                                `exo.run`({cmd})
+Starts a new job in the exo buffer
+Parameters ~
+{cmd} `(string)`
+
+------------------------------------------------------------------------------
+                                                                  *exo.prompt()*
+                                 `exo.prompt`()
+Prompts for a command to run
+
+------------------------------------------------------------------------------
+                                                                    *exo.open()*
+                                  `exo.open`()
+Opens the exo window
+
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
