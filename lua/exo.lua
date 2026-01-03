@@ -131,6 +131,7 @@ function exo.run(cmd)
     if exo.bufnr == -1 then
         exo.bufnr = vim.api.nvim_create_buf(true, true)
         vim.api.nvim_set_option_value('modified', false, { buf = exo.bufnr})
+        vim.api.nvim_set_option_value('buftype', "nofile", { buf = exo.bufnr})
         vim.api.nvim_create_autocmd({ "BufDelete" }, {
             buffer = exo.bufnr,
             callback = function(_)
