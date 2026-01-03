@@ -57,6 +57,13 @@ Type ~
 `(number)`
 
 ------------------------------------------------------------------------------
+                                                                 *exo.focus_win*
+                                `exo.focus_win`
+Automatically focus window when the window opens
+Type ~
+`(bool)`
+
+------------------------------------------------------------------------------
                                                                     *exo.kill()*
                                   `exo.kill`()
 Sends SIGTERM to the job. If it does not terminate after a timeout. It

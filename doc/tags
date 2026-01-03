@@ -1,6 +1,7 @@
 exo	exo.txt	/*exo*
 exo.bufnr	exo.txt	/*exo.bufnr*
 exo.finished_at	exo.txt	/*exo.finished_at*
+exo.focus_win	exo.txt	/*exo.focus_win*
 exo.job	exo.txt	/*exo.job*
 exo.kill()	exo.txt	/*exo.kill()*
 exo.open()	exo.txt	/*exo.open()*

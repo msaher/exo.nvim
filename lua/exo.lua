@@ -40,6 +40,10 @@ exo.started_at = 0
 ---@type number
 exo.finished_at = 0
 
+--- Automatically focus window when the window opens
+---@type bool
+exo.focus_win = true
+
 local buf_set_lines = vim.schedule_wrap(vim.api.nvim_buf_set_lines)
 
 ---@param bufnr number
@@ -71,7 +75,7 @@ local function open_window(bufnr, w_threshold)
         win_cfg.split = "below"
     end
 
-    return vim.api.nvim_open_win(bufnr, false, win_cfg)
+    return vim.api.nvim_open_win(bufnr, exo.focus_win, win_cfg)
 end
 
 --- Sends SIGTERM to the job. If it does not terminate after a timeout. It
